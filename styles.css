@@ -6,3 +6,16 @@ b{
   font-size: 30pt;
   font-family: "IBM Plex Mono", monospace;
 } 
+.fancy-btn {
+  background: #4f46e5;
+  color: gray;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fancy-btn:hover {
+  background: #6366f1;
+}
