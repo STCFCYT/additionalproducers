@@ -7,7 +7,7 @@ b{
   font-family: "IBM Plex Mono", monospace;
 } 
 .fancy-btn {
-  background: #4f46e5;
+  background: #808080;
   color: gray;
   padding: 10px 20px;
   border: black;
@@ -17,5 +17,5 @@ b{
 }
 
 .fancy-btn:hover {
-  background: #808080;
+  background: #00ff00;
 }
