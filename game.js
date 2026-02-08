@@ -1,2 +1,3 @@
 let AP = 10;
-  document.getElementById("output").textContent = "You have " + AP + " Addition Points.";
+let APRone = 0;
+let APRtwo = 0;
