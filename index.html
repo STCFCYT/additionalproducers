@@ -3,7 +3,11 @@
 <link rel="stylesheet" href="styles.css">
 <html>
   <head>
-    <h1><p id="output"><script>document.getElementById("output").textContent = "You have " + AP + " Addition Points."</script></p></h1>
+    <h1><p id="output">
+      <script>
+        let AP = 10;
+        document.getElementById("output").textContent = "You have " + AP + " Addition Points."
+      </script></p></h1>
   </head>
   <body><p>You are getting 0 Addition Points/s</p>
   <button class="fancy-btn">
