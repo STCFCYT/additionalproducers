@@ -6,7 +6,7 @@ b{
   font-size: 30pt;
   font-family: "IBM Plex Mono", monospace;
 } 
-.fancy-btn {
+.apr1-btn {
   background: #ffffff;
   color: black;
   padding: 10px 20px;
@@ -15,7 +15,7 @@ b{
   cursor: pointer;
 }
 
-.fancy-btn:hover {
+.apr1-btn:hover {
   background: #00ff00;
   color: black;
 }
