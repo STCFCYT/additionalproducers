@@ -14,11 +14,13 @@ b{
   font-size: 16px;
   cursor: pointer;
 }
-
 .apr1-btn:hover {
   background: #ffffff;
   color: black;
 }
+apr1_btn:click {
+  AP -= 10;
+}  
 .apr2-btn {
   background: #00ff00;
   color: black;
