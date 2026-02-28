@@ -28,7 +28,7 @@ function APRONE() {
   APRone += 1;
   AP -= 10;
   clicksone += 1;
-  if var clicksone = 10 {
+  if (clicksone === 10) {
     clicksone = 0;
     costone *= 1000;
   }
@@ -36,7 +36,7 @@ function APRTWO() {
   APRtwo += 1;
   AP -= 100;
   clickstwo += 1;
-  if var clickstwo = 10 {
+  if (clickstwo === 10) {
     clickstwo = 0;
     costtwo *= 10000;
   }
@@ -45,7 +45,7 @@ function APRTHREE() {
   APRthree += 1;
   AP -= 10000;
   clicksthree += 1;
-  if var clicksthree = 10 {
+  if (clicksthree === 10) {
     clicksthree = 0;
     costthree *= 100000;
   }
@@ -54,7 +54,7 @@ function APRFOUR() {
   APRfour += 1;
   AP -= 1000000;
   clicksfour += 1;
-  if var clicksfour = 10 {
+  if (clicksfour === 10) {
     clicksfour = 0;
     costfour *= 1000000;
   }
