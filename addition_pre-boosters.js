@@ -53,6 +53,7 @@ function APRONE() {
     if (clicksone === 10) {
       clicksone = 0;
       costone *= 1000;
+      multone *= 2;
     }
     updateUI();
   }
@@ -66,6 +67,7 @@ function APRTWO() {
     if (clickstwo === 10) {
       clickstwo = 0;
       costtwo *= 10000;
+      multtwo *= 2;
     }
     updateUI();
   }
@@ -79,6 +81,7 @@ function APRTHREE() {
     if (clicksthree === 10) {
       clicksthree = 0;
       costthree *= 100000;
+      multthree *= 2;
     }
     updateUI();
   }
@@ -92,6 +95,63 @@ function APRFOUR() {
     if (clicksfour === 10) {
       clicksfour = 0;
       costfour *= 1000000;
+      multfour *= 2;
+    }
+    updateUI();
+  }
+}
+
+function APRFIVE() {
+  if (AP >= costfive) {
+    APRfive += 1;
+    AP -= costfive;
+    clicksfive += 1;
+    if (clicksfive === 10) {
+      clicksfive = 0;
+      costfive *= 100000000;
+      multfive *= 2;
+    }
+    updateUI();
+  }
+}
+
+function APRSIX() {
+  if (AP >= costsix) {
+    APRsix += 1;
+    AP -= costsix;
+    clickssix += 1;
+    if (clickssix === 10) {
+      clickssix = 0;
+      costsix *= 10000000000;
+      multsix *= 2;
+    }
+    updateUI();
+  }
+}
+
+function APRSEVEN() {
+  if (AP >= costseven) {
+    APRseven += 1;
+    AP -= costseven;
+    clicksseven += 1;
+    if (clicksseven === 10) {
+      clicksseven = 0;
+      costseven *= 10000000000;
+      multseven *= 2;
+    }
+    updateUI();
+  }
+}
+
+function APREIGHT() {
+  if (AP >= costeight) {
+    APReight += 1;
+    AP -= costeight;
+    clickseight += 1;
+    if (clickseight === 10) {
+      clickseight = 0;
+      costeight *= 10000000000;
+      multeight *= 2;
     }
     updateUI();
   }
