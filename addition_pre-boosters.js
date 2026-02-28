@@ -1,3 +1,11 @@
+// Global variables - shared across all scripts
+let AP = 10;
+let APRone = 0;
+let APRtwo = 0;
+let APRthree = 0;
+let APRfour = 0;
+
+// Cost and multiplier tracking
 let costone = 10;
 let multone = 1;
 let clicksone = 0;
@@ -24,39 +32,67 @@ let clicksseven = 0;
 let costeight = 1000000000000000000;
 let multeight = 1;
 let clickseight = 0;
+
+// Function to update all UI displays
+function updateUI() {
+  document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
+  document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
+  document.getElementById("aprtwo").textContent = "Second Additional Producers: " + APRtwo;
+  document.getElementById("aprthree").textContent = "Third Additional Producers: " + APRthree;
+  document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + APRfour;
+}
+
 function APRONE() {
-  APRone += 1;
-  AP -= 10;
-  clicksone += 1;
-  if (clicksone === 10) {
-    clicksone = 0;
-    costone *= 1000;
+  if (AP >= costone) {
+    APRone += 1;
+    AP -= costone;
+    clicksone += 1;
+    if (clicksone === 10) {
+      clicksone = 0;
+      costone *= 1000;
+    }
+    updateUI();
   }
 }
+
 function APRTWO() {
-  APRtwo += 1;
-  AP -= 100;
-  clickstwo += 1;
-  if (clickstwo === 10) {
-    clickstwo = 0;
-    costtwo *= 10000;
+  if (AP >= costtwo) {
+    APRtwo += 1;
+    AP -= costtwo;
+    clickstwo += 1;
+    if (clickstwo === 10) {
+      clickstwo = 0;
+      costtwo *= 10000;
+    }
+    updateUI();
   }
 }
+
 function APRTHREE() {
-  APRthree += 1;
-  AP -= 10000;
-  clicksthree += 1;
-  if (clicksthree === 10) {
-    clicksthree = 0;
-    costthree *= 100000;
+  if (AP >= costthree) {
+    APRthree += 1;
+    AP -= costthree;
+    clicksthree += 1;
+    if (clicksthree === 10) {
+      clicksthree = 0;
+      costthree *= 100000;
+    }
+    updateUI();
   }
 }
+
 function APRFOUR() {
-  APRfour += 1;
-  AP -= 1000000;
-  clicksfour += 1;
-  if (clicksfour === 10) {
-    clicksfour = 0;
-    costfour *= 1000000;
+  if (AP >= costfour) {
+    APRfour += 1;
+    AP -= costfour;
+    clicksfour += 1;
+    if (clicksfour === 10) {
+      clicksfour = 0;
+      costfour *= 1000000;
+    }
+    updateUI();
   }
 }
+
+// Initialize UI on page load
+window.addEventListener('load', updateUI);
