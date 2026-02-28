@@ -39,10 +39,22 @@ let clickseight = 0;
 // Function to update all UI displays
 function updateUI() {
   document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
+  document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
   document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
+  document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costwo + " AP";
   document.getElementById("aprtwo").textContent = "Second Additional Producers: " + APRtwo;
+  document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costhree + " AP";
   document.getElementById("aprthree").textContent = "Third Additional Producers: " + APRthree;
+  document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for " + costfour + " AP";
   document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + APRfour;
+  document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for " + costfive + " AP";
+  document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + APRfive;
+  document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for " + costsix + " AP";
+  document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + APRsix;
+  document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for " + costseven + " AP";
+  document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + APRseven;
+  document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for " + costeight + " AP";
+  document.getElementById("apreight").textContent = "Eighth Additional Producers: " + APReight;
 }
 
 function APRONE() {
@@ -136,7 +148,7 @@ function APRSEVEN() {
     clicksseven += 1;
     if (clicksseven === 10) {
       clicksseven = 0;
-      costseven *= 10000000000;
+      costseven *= 1000000000000;
       multseven *= 2;
     }
     updateUI();
@@ -150,7 +162,7 @@ function APREIGHT() {
     clickseight += 1;
     if (clickseight === 10) {
       clickseight = 0;
-      costeight *= 10000000000;
+      costeight *= 1000000000000000;
       multeight *= 2;
     }
     updateUI();
