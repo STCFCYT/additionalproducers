@@ -4,7 +4,10 @@ let APRone = 0;
 let APRtwo = 0;
 let APRthree = 0;
 let APRfour = 0;
-
+let APRfive = 0;
+let APRsix = 0;
+let APRseven = 0;
+let APReight = 0;
 // Cost and multiplier tracking
 let costone = 10;
 let multone = 1;
