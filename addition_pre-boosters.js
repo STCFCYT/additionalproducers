@@ -32,6 +32,7 @@ function APRONE() {
     clicksone = 0;
     costone *= 1000;
   }
+}
 function APRTWO() {
   APRtwo += 1;
   AP -= 100;
