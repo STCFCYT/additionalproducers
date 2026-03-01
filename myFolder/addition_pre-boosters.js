@@ -41,9 +41,9 @@ function updateUI() {
   document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
   document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
   document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
-  document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costwo + " AP";
+  document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
   document.getElementById("aprtwo").textContent = "Second Additional Producers: " + APRtwo;
-  document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costhree + " AP";
+  document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costthree + " AP";
   document.getElementById("aprthree").textContent = "Third Additional Producers: " + APRthree;
   document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for " + costfour + " AP";
   document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + APRfour;
