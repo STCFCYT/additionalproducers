@@ -1,4 +1,4 @@
-async while (APRone > 0) {
-  await wait(50)
-  AP += APRone
+ while (APRone > 0) {
+  wait(0.05);
+  AP += APRone;
 }
