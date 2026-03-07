@@ -1,4 +1,4 @@
-while (APRone > 0) {
-  this.wait(0.05)
+async while (APRone > 0) {
+  await wait(50)
   AP += APRone
 }
