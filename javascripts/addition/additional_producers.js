@@ -1,4 +1,4 @@
 while (APRone > 0) {
-  wait(0.05);
+  wait(50);
   AP += APRone;
 }
