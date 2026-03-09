@@ -1,4 +1,5 @@
 while (APRone > 0) {
-  wait(50);
-  AP += APRone;
+  setTimeout(() => {
+    AP += (APRone * multone * 0.05);
+  }, 50);
 }
