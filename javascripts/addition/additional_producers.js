@@ -1,5 +1,3 @@
-while (APRone > 0) {
-  setTimeout(() => {
-    AP += (APRone * multone * 0.05);
-  }, 50);
-}
+setInterval(() => {
+    AP += oneAPR * multone * 0.05;
+}, 50);
