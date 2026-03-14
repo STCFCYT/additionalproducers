@@ -171,6 +171,3 @@ function APREIGHT() {
 
 // Initialize UI on page load
 window.addEventListener('load', updateUI);
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
