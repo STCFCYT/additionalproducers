@@ -170,4 +170,4 @@ function APREIGHT() {
 }
 
 // Initialize UI on page load
-window.addEventListener('load', updateUI);
+window.addEventListener('load', setInterval, updateUI);
