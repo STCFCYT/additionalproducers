@@ -35,7 +35,15 @@ let clicksseven = 0;
 let costeight = 1000000000000000000;
 let multeight = 1;
 let clickseight = 0;
-
+// AP and APR Gain must be assigned into different variables
+let apgain = APRone * multone * 0.05
+let apronegain = APRtwo * multtwo * 0.05
+let aprtwogain = APRthree * multthree * 0.05
+let aprthreegain = APRfour * multfour * 0.05
+let aprfourgain = APRfive * multfive * 0.05
+let aprfivegain = APRsix * multsix * 0.05
+let aprsixgain = APRseven * multseven * 0.05
+let aprsevengain = APReight * multeight * 0.05
 // Function to update all UI displays
 function updateUI() {
   document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
