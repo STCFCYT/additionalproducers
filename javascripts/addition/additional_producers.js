@@ -1,3 +1,3 @@
 setInterval(() => {
-    AP += (APRone * multone * 0.05);
+    AP += apgain;
 }, 50);
