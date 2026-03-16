@@ -38,23 +38,23 @@ let clickseight = 0;
 
 // Function to update all UI displays
 function updateUI() {
-  const display = document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
-  const display = document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
-  const display = document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
-  const display = document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
-  const display = document.getElementById("aprtwo").textContent = "Second Additional Producers: " + APRtwo;
-  const display = document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costthree + " AP";
-  const display = document.getElementById("aprthree").textContent = "Third Additional Producers: " + APRthree;
-  const display = document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for " + costfour + " AP";
-  const display = document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + APRfour;
-  const display = document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for " + costfive + " AP";
-  const display = document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + APRfive;
-  const display = document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for " + costsix + " AP";
-  const display = document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + APRsix;
-  const display = document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for " + costseven + " AP";
-  const display = document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + APRseven;
-  const display = document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for " + costeight + " AP";
-  const display = document.getElementById("apreight").textContent = "Eighth Additional Producers: " + APReight;
+  document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
+  document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
+  document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
+  document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
+  document.getElementById("aprtwo").textContent = "Second Additional Producers: " + APRtwo;
+  document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costthree + " AP";
+  document.getElementById("aprthree").textContent = "Third Additional Producers: " + APRthree;
+  document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for " + costfour + " AP";
+  document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + APRfour;
+  document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for " + costfive + " AP";
+  document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + APRfive;
+  document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for " + costsix + " AP";
+  document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + APRsix;
+  document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for " + costseven + " AP";
+  document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + APRseven;
+  document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for " + costeight + " AP";
+  document.getElementById("apreight").textContent = "Eighth Additional Producers: " + APReight;
 }
 
 function APRONE() {
