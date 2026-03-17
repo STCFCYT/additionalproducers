@@ -48,7 +48,7 @@ aprsixgain = APRseven * multseven * 0.05
 aprsevengain = APReight * multeight * 0.05
 // Function to update all UI displays
 function updateUI() {
-  document.getElementById("ap").textContent = "You have " + AP + " Addition Points.";
+  document.getElementById("ap").textContent = "You have " + math.floor(AP) + " Addition Points.";
   document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
   document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
   document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
