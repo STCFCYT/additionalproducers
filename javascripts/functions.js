@@ -36,7 +36,9 @@ costeight = 1000000000000000000;
 multeight = 1;
 clickseight = 0;
 // AP and APR Gain must be assigned into different variables
-apgain = APRone * multone * 0.05
+function updateAPGain() {
+    apgain = APRone * multone * 0.05;
+}
 apronegain = APRtwo * multtwo * 0.05
 aprtwogain = APRthree * multthree * 0.05
 aprthreegain = APRfour * multfour * 0.05
