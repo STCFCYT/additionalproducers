@@ -39,13 +39,27 @@ clickseight = 0;
 function updateAPGain() {
     apgain = APRone * multone * 0.05;
 }
-apronegain = APRtwo * multtwo * 0.05
-aprtwogain = APRthree * multthree * 0.05
-aprthreegain = APRfour * multfour * 0.05
-aprfourgain = APRfive * multfive * 0.05
-aprfivegain = APRsix * multsix * 0.05
-aprsixgain = APRseven * multseven * 0.05
-aprsevengain = APReight * multeight * 0.05
+function updateAPRONEGain() {
+    apronegain = APRtwo * multtwo * 0.05;
+}
+function updateAPRTWOGain() {
+    aprtwogain = APRthree * multthree * 0.05;
+}
+function updateAPRTHREEGain() {
+    aprthreegain = APRfour * multfour * 0.05;
+}
+function updateAPRFOURGain() {
+    aprfourgain = APRfive * multfive * 0.05;
+}
+function updateAPRFIVEGain() {
+    aprfivegain = APRsix * multsix * 0.05;
+}
+function updateAPRSIXGain() {
+    aprsixgain = APRseven * multseven * 0.05;
+}
+function updateAPRSEVENGain() {
+    aprsevengain = APReight * multeight * 0.05;
+}
 // Function to update all UI displays
 function updateUI() {
   document.getElementById("ap").textContent = "You have " + Math.floor(AP) + " Addition Points.";
