@@ -39,25 +39,25 @@ clickseight = 0;
 function updateAPGain() {
     apgain = APRone * multone * 0.05;
 }
-function updateAPRONEGain() {
+function updateAPRONEgain() {
     apronegain = APRtwo * multtwo * 0.05;
 }
-function updateAPRTWOGain() {
+function updateAPRTWOgain() {
     aprtwogain = APRthree * multthree * 0.05;
 }
-function updateAPRTHREEGain() {
+function updateAPRTHREEgain() {
     aprthreegain = APRfour * multfour * 0.05;
 }
-function updateAPRFOURGain() {
+function updateAPRFOURgain() {
     aprfourgain = APRfive * multfive * 0.05;
 }
-function updateAPRFIVEGain() {
+function updateAPRFIVEgain() {
     aprfivegain = APRsix * multsix * 0.05;
 }
-function updateAPRSIXGain() {
+function updateAPRSIXgain() {
     aprsixgain = APRseven * multseven * 0.05;
 }
-function updateAPRSEVENGain() {
+function updateAPRSEVENgain() {
     aprsevengain = APReight * multeight * 0.05;
 }
 // Function to update all UI displays
