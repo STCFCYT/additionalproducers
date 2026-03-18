@@ -62,7 +62,11 @@ function updateAPRSEVENgain() {
 }
 // Function to update all UI displays
 function updateUI() {
-  document.getElementById("ap").textContent = "You have " + Math.floor(AP) + " Addition Points.";
+  if (AP < 1000000) {
+    document.getElementById("ap").textContent = "You have " + Math.floor(AP) + " Addition Points.";
+  } else {
+      document.getElementById("ap").textContent = "You have e" + Math.floor(Math.log(AP)*100)/100 + " Addition Points.";
+  }
   document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone) + " AP/s";
   document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
   document.getElementById("aprone").textContent = "First Additional Producers: " + Math.floor(APRone);
