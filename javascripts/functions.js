@@ -63,7 +63,7 @@ function updateAPRSEVENgain() {
 // Function to update all UI displays
 function updateUI() {
   document.getElementById("ap").textContent = "You have " + Math.floor(AP) + " Addition Points.";
-  document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(AP * multone) + " AP/s";
+  document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone) + " AP/s";
   document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
   document.getElementById("aprone").textContent = "First Additional Producers: " + Math.floor(APRone);
   document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
