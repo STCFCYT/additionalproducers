@@ -65,12 +65,12 @@ function updateUI() {
   if (AP < 1000000) {
     document.getElementById("ap").textContent = "You have " + Math.floor(AP) + " Addition Points.";
   } else {
-    document.getElementById("ap").textContent = "You have e" + Math.floor(Math.log(AP)*100)/100 + " Addition Points.";
+    document.getElementById("ap").textContent = "You have e" + Math.floor(Math.log10(AP)*100)/100 + " Addition Points.";
   }
   if (apgain < 1000000){
     document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone) + " AP/s";
   } else {
-    document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log(APRone * multone)*100)/100 + " AP/s";
+    document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone)*100)/100 + " AP/s";
   }
   document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
   document.getElementById("aprone").textContent = "First Additional Producers: " + Math.floor(APRone);
