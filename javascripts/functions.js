@@ -37,48 +37,49 @@ multeight = 1;
 clickseight = 0;
 // AP and APR Gain must be assigned into different variables
 function updateAPGain() {
-    apgain = APRone * multone * 0.05;
+    apgain = APRone * multone;
 }
 function updateAPRONEgain() {
-    apronegain = APRtwo * multtwo * 0.05;
+    apronegain = APRtwo * multtwo;
 }
 function updateAPRTWOgain() {
-    aprtwogain = APRthree * multthree * 0.05;
+    aprtwogain = APRthree * multthree;
 }
 function updateAPRTHREEgain() {
-    aprthreegain = APRfour * multfour * 0.05;
+    aprthreegain = APRfour * multfour;
 }
 function updateAPRFOURgain() {
-    aprfourgain = APRfive * multfive * 0.05;
+    aprfourgain = APRfive * multfive;
 }
 function updateAPRFIVEgain() {
-    aprfivegain = APRsix * multsix * 0.05;
+    aprfivegain = APRsix * multsix;
 }
 function updateAPRSIXgain() {
-    aprsixgain = APRseven * multseven * 0.05;
+    aprsixgain = APRseven * multseven;
 }
 function updateAPRSEVENgain() {
-    aprsevengain = APReight * multeight * 0.05;
+    aprsevengain = APReight * multeight;
 }
 // Function to update all UI displays
 function updateUI() {
   document.getElementById("ap").textContent = "You have " + Math.floor(AP) + " Addition Points.";
+  document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(AP * multone) + " AP/s";
   document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
-  document.getElementById("aprone").textContent = "First Additional Producers: " + APRone;
+  document.getElementById("aprone").textContent = "First Additional Producers: " + Math.floor(APRone);
   document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
-  document.getElementById("aprtwo").textContent = "Second Additional Producers: " + APRtwo;
+  document.getElementById("aprtwo").textContent = "Second Additional Producers: " + Math.floor(APRtwo);
   document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costthree + " AP";
-  document.getElementById("aprthree").textContent = "Third Additional Producers: " + APRthree;
+  document.getElementById("aprthree").textContent = "Third Additional Producers: " + Math.floor(APRthree);
   document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for " + costfour + " AP";
-  document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + APRfour;
+  document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + Math.floor(APRfour);
   document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for " + costfive + " AP";
-  document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + APRfive;
+  document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + Math.floor(APRfive);
   document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for " + costsix + " AP";
-  document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + APRsix;
+  document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + Math.floor(APRsix);
   document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for " + costseven + " AP";
-  document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + APRseven;
+  document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + Math.floor(APRseven);
   document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for " + costeight + " AP";
-  document.getElementById("apreight").textContent = "Eighth Additional Producers: " + APReight;
+  document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight);
 }
 
 function APRONE() {
