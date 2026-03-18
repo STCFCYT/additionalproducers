@@ -1,19 +1,19 @@
 setInterval(() => {
     updateAPGain();
-    AP += apgain;
+    AP += apgain * 0.05;
     updateAPRONEgain();
-    APRone += apronegain
+    APRone += apronegain * 0.05;
     updateAPRTWOgain();
-    APRtwo += aprtwogain
+    APRtwo += aprtwogain * 0.05;
     updateAPRTHREEgain();
-    APRthree += aprthreegain
+    APRthree += aprthreegain * 0.05;
     updateAPRFOURgain();
-    APRfour += aprfourgain
+    APRfour += aprfourgain * 0.05;
     updateAPRFIVEgain();
-    APRfive += aprfivegain
+    APRfive += aprfivegain * 0.05;
     updateAPRSIXgain();
-    APRsix += aprsixgain
+    APRsix += aprsixgain * 0.05;
     updateAPRSEVENgain();
-    APRseven += aprsevengain
+    APRseven += aprsevengain * 0.05;
     updateUI();
 }, 50);
