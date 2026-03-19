@@ -44,7 +44,7 @@ multiplications = 0;
 MP = 0;
 // AP and APR Gain must be assigned into different variables
 function updateAPGain() {
-    apgain = APRone * multone;
+   var apgain = APRone * multone;
 }
 function updateAPRONEgain() {
     apronegain = APRtwo * multtwo;
