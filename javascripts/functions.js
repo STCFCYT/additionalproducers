@@ -72,24 +72,43 @@ function updateUI() {
   } else {
     document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone)*100)/100 + " AP/s";
   }
-  document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
-  document.getElementById("aprone").textContent = "First Additional Producers: " + Math.floor(APRone);
-  document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
-  document.getElementById("aprtwo").textContent = "Second Additional Producers: " + Math.floor(APRtwo);
-  document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costthree + " AP";
-  document.getElementById("aprthree").textContent = "Third Additional Producers: " + Math.floor(APRthree);
-  document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for " + costfour + " AP";
-  document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + Math.floor(APRfour);
-  document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for " + costfive + " AP";
-  document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + Math.floor(APRfive);
-  document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for " + costsix + " AP";
-  document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + Math.floor(APRsix);
-  document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for " + costseven + " AP";
-  document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + Math.floor(APRseven);
-  document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for " + costeight + " AP";
-  document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight);
+  if (costone < 1000000){
+      document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
+  } else {
+      document.getElementById("costone").textContent = "Buy a First Additional Producer for e" + Math.floor(Math.log10(costone)*100)/100 + " AP";
+  }
+  if (APRone < 1000000){
+      document.getElementById("aprone").textContent = "First Additional Producers: " + Math.floor(APRone);
+  } else {
+      document.getElementById("aprone").textContent = "First Additional Producers: e" + Math.floor(Math.log10(APRone)*100)/100
+  }
+  if document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
+  if (APRtwo < 1000000){ 
+      document.getElementById("aprtwo").textContent = "Second Additional Producers: " + Math.floor(APRtwo);
+  } else {
+      document.getElementById("aprtwo").textContent = "Second Additional Producers: e" + Math.floor(Math.log10(APRtwo)*100)/100
+  }
+  if (costthree < 1000000){
+      document.getElementById("costthree").textContent = "Buy a Third Additional Producer for " + costthree + " AP";
+  } else {
+      document.getElementById("costthree").textContent = "Buy a Third Additional Producer for e" + Math.floor(Math.log10(costthree)*100)/100 + " AP";
+  }
+  if (APRthree < 1000000){
+      document.getElementById("aprthree").textContent = "Third Additional Producers: " + Math.floor(APRthree);
+  } else {
+      document.getElementById("aprthree").textContent = "Third Additional Producers: e" + Math.floor(Math.log10(APRthree)*100)/100 + " AP";
+  }
+  document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for e" + Math.floor(Math.log10(costfour)*100)/100 + " AP";
+  if document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + Math.floor(APRfour);
+  document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for e" + Math.floor(Math.log10(costfive)*100)/100 + " AP";
+  if document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + Math.floor(APRfive);
+  document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for e" + Math.floor(Math.log10(costsix)*100)/100 + " AP";
+  if document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + Math.floor(APRsix);
+  document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for e" + Math.floor(Math.log10(costseven)*100)/100 + " AP";
+  if document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + Math.floor(APRseven);
+  document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for e" + Math.floor(Math.log10(costeight)*100)/100 + " AP";
+  if document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight)
 }
-
 function APRONE() {
   if (AP >= costone) {
     APRone += 1;
