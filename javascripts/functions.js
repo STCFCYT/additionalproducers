@@ -35,6 +35,13 @@ clicksseven = 0;
 costeight = 1000000000000000000;
 multeight = 1;
 clickseight = 0;
+boostmult = 1;
+tickspeedboostmult = 1;
+AUone = 0;
+AUtwo = 0;
+AUthree = 0;
+multiplications = 0;
+MP = 0;
 // AP and APR Gain must be assigned into different variables
 function updateAPGain() {
     apgain = APRone * multone;
