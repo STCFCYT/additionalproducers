@@ -89,7 +89,11 @@ function updateUI() {
   } else {
       document.getElementById("aprone").textContent = "First Additional Producers: e" + Math.floor(Math.log10(APRone)*100)/100
   }
-  if document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
+  if (costtwo < 1000000){
+      document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
+  } else {
+      document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for e" + Math.floor(Math.log10(costtwo)*100)/100 + "AP"
+  }
   if (APRtwo < 1000000){ 
       document.getElementById("aprtwo").textContent = "Second Additional Producers: " + Math.floor(APRtwo);
   } else {
