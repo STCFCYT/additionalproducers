@@ -110,15 +110,35 @@ function updateUI() {
       document.getElementById("aprthree").textContent = "Third Additional Producers: e" + Math.floor(Math.log10(APRthree)*100)/100 + " AP";
   }
   document.getElementById("costfour").textContent = "Buy a Fourth Additional Producer for e" + Math.floor(Math.log10(costfour)*100)/100 + " AP";
-  if document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + Math.floor(APRfour);
+  if (APRfour < 1000000) {
+    document.getElementById("aprfour").textContent = "Fourth Additional Producers: " + Math.floor(APRfour);
+  } else {
+    document.getElementById("aprfour").textContent = "Fourth Additional Producers: e" +  Math.floor(Math.log10(APRfour)*100)/100;
+  }
   document.getElementById("costfive").textContent = "Buy a Fifth Additional Producer for e" + Math.floor(Math.log10(costfive)*100)/100 + " AP";
-  if document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + Math.floor(APRfive);
+  if (APRfive < 1000000){
+    document.getElementById("aprfive").textContent = "Fifth Additional Producers: " + Math.floor(APRfive);
+  } else {
+    document.getElementById("aprfive").textContent = "Fifth Additional Producers: e" + Math.floor(Math.log10(APRfive)*100)/100;
+  }
   document.getElementById("costsix").textContent = "Buy a Sixth Additional Producer for e" + Math.floor(Math.log10(costsix)*100)/100 + " AP";
-  if document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + Math.floor(APRsix);
+  if (APRsix < 1000000){
+    document.getElementById("aprsix").textContent = "Sixth Additional Producers: " + Math.floor(APRsix);
+  } else {
+    document.getElementById("aprsix").textContent = "Sixth Additional Producers: e" + Math.floor(Math.log10(APRsix)*100)/100;
+  }
   document.getElementById("costseven").textContent = "Buy a Seventh Additional Producer for e" + Math.floor(Math.log10(costseven)*100)/100 + " AP";
-  if document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + Math.floor(APRseven);
+  if (APRseven < 1000000) {
+      document.getElementById("aprseven").textContent = "Seventh Additional Producers: " + Math.floor(APRseven);
+  } else {
+      document.getElementById("aprseven").textContent = "Seventh Additional Producers: e" + Math.floor(Math.log10(APRseven)*100)/100;
+  }
   document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for e" + Math.floor(Math.log10(costeight)*100)/100 + " AP";
-  if document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight)
+  if (APReight < 1000000){
+      document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight)
+  } else {
+      document.getElementById("apreight").textContent = "Eighth Additional Producers: e" + Math.floor(Math.log10(APReight)*100)/100;
+  }
 }
 function APRONE() {
   if (AP >= costone) {
