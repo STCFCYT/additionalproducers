@@ -1,6 +1,9 @@
 setInterval(() => {
     updateAPGain();
     AP += apgain * 0.05;
+    if ((APRone = 0) ∨ (multiplications = 0)) {
+        document.getElementById("aprtwosection").style.display = "none";
+    }
     updateAPRONEgain();
     APRone += apronegain * 0.05;
     updateAPRTWOgain();
