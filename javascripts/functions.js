@@ -1,20 +1,20 @@
 // Global variables and their gains - shared across all scripts
 AP = 10;
-apgain = 0;
+let apgain = 0;
 APRone = 0;
-apronegain = 0;
+let apronegain = 0;
 APRtwo = 0;
-aprtwogain = 0;
+let aprtwogain = 0;
 APRthree = 0;
-aprthreegain = 0;
+let aprthreegain = 0;
 APRfour = 0;
-aprfourgain = 0;
+let aprfourgain = 0;
 APRfive = 0;
-aprfivegain = 0;
+let aprfivegain = 0;
 APRsix = 0;
-aprsixgain = 0;
+let aprsixgain = 0;
 APRseven = 0;
-aprsevengain = 0;
+let aprsevengain = 0;
 APReight = 0;
 // Cost and multiplier tracking
 costone = 10;
