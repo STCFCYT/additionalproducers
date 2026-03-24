@@ -28,19 +28,19 @@ tickspeed = 1;
 costthree = 10000;
 multthree = 1;
 clicksthree = 0;
-costfour = 1000000;
+costfour = 1e6;
 multfour = 1;
 clicksfour = 0;
-costfive = 1000000000;
+costfive = 1e9;
 multfive = 1;
 clicksfive = 0;
-costsix = 1000000000000;
+costsix = 1e12;
 multsix = 1;
 clickssix = 0;
-costseven = 1000000000000000;
+costseven = 1e15;
 multseven = 1;
 clicksseven = 0;
-costeight = 1000000000000000000;
+costeight = 1e18;
 multeight = 1;
 clickseight = 0;
 boostmult = 1;
@@ -197,7 +197,7 @@ function APRFOUR() {
     clicksfour += 1;
     if (clicksfour === 10) {
       clicksfour = 0;
-      costfour *= 1000000;
+      costfour *= 1e6;
       multfour *= 2;
     }
     updateUI();
@@ -211,7 +211,7 @@ function APRFIVE() {
     clicksfive += 1;
     if (clicksfive === 10) {
       clicksfive = 0;
-      costfive *= 100000000;
+      costfive *= 1e8;
       multfive *= 2;
     }
     updateUI();
@@ -225,7 +225,7 @@ function APRSIX() {
     clickssix += 1;
     if (clickssix === 10) {
       clickssix = 0;
-      costsix *= 10000000000;
+      costsix *= 1e10;
       multsix *= 2;
     }
     updateUI();
@@ -239,7 +239,7 @@ function APRSEVEN() {
     clicksseven += 1;
     if (clicksseven === 10) {
       clicksseven = 0;
-      costseven *= 1000000000000;
+      costseven *= 1e12;
       multseven *= 2;
     }
     updateUI();
@@ -253,7 +253,7 @@ function APREIGHT() {
     clickseight += 1;
     if (clickseight === 10) {
       clickseight = 0;
-      costeight *= 1000000000000000;
+      costeight *= 1e15;
       multeight *= 2;
     }
     updateUI();
