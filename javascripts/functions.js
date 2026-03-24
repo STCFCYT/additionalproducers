@@ -100,7 +100,7 @@ function updateUI() {
   if (costtwo < 1000000){
       document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for " + costtwo + " AP";
   } else {
-      document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for e" + Math.floor(Math.log10(costtwo)*100)/100 + "AP"
+      document.getElementById("costtwo").textContent = "Buy a Second Additional Producer for e" + Math.floor(Math.log10(costtwo)*100)/100 + " AP"
   }
   if (APRtwo < 1000000){ 
       document.getElementById("aprtwo").textContent = "Second Additional Producers: " + Math.floor(APRtwo);
