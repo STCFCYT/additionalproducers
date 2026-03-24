@@ -1,6 +1,6 @@
 setInterval(() => {
     updateAPGain();
-    if (AP === (10**60)) {
+    if (AP >= (1e60)) {
     document.getElementById("addition_subtabs-btn").style.display = "block";
     }
     AP += apgain * 0.05;
