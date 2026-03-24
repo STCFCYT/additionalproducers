@@ -1,3 +1,4 @@
+document.getElementById("addition_subtabs-btn").style.display = "none";
 setInterval(() => {
     updateAPGain();
     if (AP >= (1e60)) {
