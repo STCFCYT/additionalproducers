@@ -15,6 +15,15 @@ b{
   font-size: 16px;
   cursor: pointer;
 }
+.addition_subtabs-btn {
+  background: #000000;
+  color: red;
+  padding: 8px 16px;
+  border-radius: 6.4px;
+  border-color: #ff0000;
+  font-size: 12.8px;
+  cursor: pointer;
+}
 .achievements-btn {
   background: #ffff00;
   color: orange;
