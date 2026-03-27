@@ -148,6 +148,12 @@ function updateUI() {
       document.getElementById("apreight").textContent = "Eighth Additional Producers: e" + Math.floor(Math.log10(APReight)*100)/100;
   }
 }
+function ACHIEVEMENTSTAB() {
+    document.getElementById("addition_tab").style.display = "none";
+}
+function ADDITIONTAB() {
+    document.getElementById("addition_tab").style.display = "block";
+}
 function APRONE() {
   if (AP >= costone) {
     APRone += 1;
