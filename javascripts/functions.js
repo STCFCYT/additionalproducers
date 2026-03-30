@@ -23,8 +23,8 @@ clicksone = 0;
 costtwo = 100;
 multtwo = 1;
 clickstwo = 0;
-tickspeedcost = 1000;
 tickspeed = 1;
+tickspeedcost = 1000;
 costthree = 10000;
 multthree = 1;
 clicksthree = 0;
@@ -143,9 +143,19 @@ function updateUI() {
   }
   document.getElementById("costeight").textContent = "Buy a Eighth Additional Producer for e" + Math.floor(Math.log10(costeight)*100)/100 + " AP";
   if (APReight < 1000000){
-      document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight)
+      document.getElementById("apreight").textContent = "Eighth Additional Producers: " + Math.floor(APReight);
   } else {
       document.getElementById("apreight").textContent = "Eighth Additional Producers: e" + Math.floor(Math.log10(APReight)*100)/100;
+  }
+  if (tickspeed < 1000000) {
+      document.getElementById("tickspeed").textContent = "Tickspeed Multiplier: x" + Math.floor(tickspeed*100)/100;
+  } else {
+      document.getElementById("tickspeed").textContent = "Tickspeed Multiplier: xe" + Math.floor(Math.log10(tickspeed)*100)/100;
+  }
+  if (tickspeedcost < 1000000) {
+      document.getElementById("tickspeed").textContent = "Buy a Tickspeed Upgrade for " + Math.floor(AP) + "AP";
+  } else {
+      document.getElementById("tickspeed").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(AP)*100)/100;
   }
 }
 function APRONE() {
@@ -174,6 +184,14 @@ function APRTWO() {
     }
     updateUI();
   }
+}
+
+function TICKSPEED() {
+    if (AP >= tickspeedcost) {
+        tickspeed *= (tickspeedboostmult * 1.2);
+        tickspeedcost *= 10;
+    }
+    updateUI();
 }
 
 function APRTHREE() {
