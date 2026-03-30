@@ -24,15 +24,6 @@ b{
   font-size: 12.8px;
   cursor: pointer;
 }
-.achievements-btn {
-  background: #ffff00;
-  color: orange;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #ff8000;
-  font-size: 16px;
-  cursor: pointer;
-}
 .apr1-btn {
   background: #ffffff;
   color: black;
@@ -57,6 +48,19 @@ b{
 }
 
 .apr2-btn:hover {
+  background: #ffffff;
+  color: black;
+}
+.tickspeed-btn {
+  background: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #00ff00;
+  font-size: 16px;
+  cursor: pointer;
+}
+.tickspeed-btn:hover {
   background: #ffffff;
   color: black;
 }
