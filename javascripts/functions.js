@@ -153,9 +153,9 @@ function updateUI() {
       document.getElementById("tickspeed").textContent = "Tickspeed Multiplier: xe" + Math.floor(Math.log10(tickspeed)*100)/100;
   }
   if (tickspeedcost < 1000000) {
-      document.getElementById("tickspeed").textContent = "Buy a Tickspeed Upgrade for " + Math.floor(AP) + "AP";
+      document.getElementById("tickspeed").textContent = "Buy a Tickspeed Upgrade for " + Math.floor(tickspeedcost) + " AP";
   } else {
-      document.getElementById("tickspeed").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(AP)*100)/100;
+      document.getElementById("tickspeed").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(tickspeedcost)*100)/100 + " AP";
   }
 }
 function APRONE() {
