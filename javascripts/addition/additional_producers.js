@@ -12,8 +12,6 @@ setInterval(() => {
     APRone += apronegain * tickspeed * 0.05;
     if (APRtwo !== 0) {
         document.getElementById("aprthreesection").style.display = "block";
-    }
-    if (APRtwo !== 0) {
         document.getElementById("tickspeedsection").style.display = "block";
     }
     updateAPRTWOgain();
