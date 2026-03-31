@@ -185,7 +185,6 @@ function APRTWO() {
     updateUI();
   }
 }
-
 function TICKSPEED() {
     if (AP >= tickspeedcost) {
         tickspeed *= (tickspeedboostmult * 1.2);
