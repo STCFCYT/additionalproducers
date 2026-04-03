@@ -1,6 +1,7 @@
 document.getElementById("addition_subtabs-btn").style.display = "none";
 document.getElementById("aprtwosection").style.display = "none";
 document.getElementById("aprthreesection").style.display = "none";
+document.getElementById("tickspeedsection").style.display = "none";
 document.getElementById("aprfoursection").style.display = "none";
 document.getElementById("aprfivesection").style.display = "none";
 document.getElementById("aprsixsection").style.display = "none";
