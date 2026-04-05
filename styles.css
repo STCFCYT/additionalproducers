@@ -24,6 +24,19 @@ b{
   font-size: 12.8px;
   cursor: pointer;
 }
+.max_all-btn {
+  background: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #00ff00;
+  font-size: 16px;
+  cursor: pointer;
+}
+.max_all-btn:hover {
+  background: #ffffff;
+  color: black;
+}
 .apr1-btn {
   background: #ffffff;
   color: black;
