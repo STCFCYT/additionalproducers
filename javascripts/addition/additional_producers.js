@@ -4,6 +4,7 @@ document.getElementById("aprthreesection").style.display = "none";
 document.getElementById("tickspeedsection").style.display = "none";
 document.getElementById("aprfoursection").style.display = "none";
 document.getElementById("aprfivesection").style.display = "none";
+document.getElementById("maxallbutton").style.display = "none";
 document.getElementById("aprsixsection").style.display = "none";
 document.getElementById("aprsevensection").style.display = "none";
 document.getElementById("apreightsection").style.display = "none";
@@ -31,6 +32,7 @@ setInterval(() => {
     APRthree += aprthreegain * tickspeed * 0.05;
     if (APRfour !== 0) {
         document.getElementById("aprfivesection").style.display = "block";
+        document.getElementById("maxallbutton").style.display = "block";
     }
     updateAPRFOURgain();
     APRfour += aprfourgain * tickspeed * 0.05;
