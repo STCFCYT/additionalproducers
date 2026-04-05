@@ -278,5 +278,35 @@ function APREIGHT() {
   }
 }
 
+function MAXALL() {
+    while (AP > tickspeedcost){
+      TICKSPEED();
+    }
+    while (AP > costone){
+      APRONE();
+    }
+    while (AP > costtwo){
+      APRTWO();
+    }
+    while (AP > costthree){
+      APRTHREE();
+    }
+    while (AP > costfour){
+      APRFOUR();
+    }
+    while (AP > costfive){
+      APRFIVE();
+    }
+    while (AP > costsix){
+      APRSIX();
+    }
+    while (AP > costseven){
+      APRSEVEN();
+    }
+    while (AP > costeight){
+      APREIGHT();
+    }
+}
+
 // Initialize UI on page load
 window.addEventListener('load', updateUI);
