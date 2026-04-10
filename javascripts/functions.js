@@ -158,6 +158,111 @@ function updateUI() {
       document.getElementById("tickspeedcost").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(tickspeedcost)*100)/100 + " AP";
   }
 }
+function SAVE {
+  const savedata = { 
+    AP;
+    apgain;
+    costone;
+    clicksone;
+    multone;
+    APRone;
+    apronegain;
+    costtwo;
+    clickstwo;
+    multtwo;
+    APRtwo;
+    aprtwogain;
+    tickspeed;
+    tickspeedcost;
+    costthree;
+    clicksthree;
+    multthree;
+    APRthree;
+    aprthreegain;
+    costfour;
+    clicksfour;
+    multfour;
+    APRfour;
+    aprfourgain;
+    costfive;
+    clicksfive;
+    multfive;
+    APRfive;
+    aprfivegain;
+    costsix;
+    clickssix;
+    multsix;
+    APRsix;
+    aprsixgain;
+    costseven;
+    clicksseven;
+    multseven;
+    APRseven;
+    aprsevengain;
+    costeight;
+    clickseight;
+    multeight;
+    APReight;
+    apreightgain;
+  };
+  localStorage.setItem("APRSave", JSON.stringify(savedata));
+}
+function LOAD() {
+    const saved = JSON.parse(localStorage.getItem("APRSave"));
+    if (!saved) return {
+      AP = saved.AP;
+      apgain = saved.apgain;
+      costone = saved.costone;
+      clicksone = saved.clicksone;
+      multone = saved.multone;
+      APRone = saved.APRone;
+      apronegain = saved.apronegain;
+      costtwo = saved.costtwo;
+      clickstwo = saved.clickstwo;
+      multtwo = saved.multtwo;
+      APRtwo = saved.APRtwo;
+      aprtwogain = saved.aprtwogain;
+      tickspeed = saved.tickspeed;
+      tickspeedcost = saved.tickspeedcost;
+      costthree = saved.costthree;
+      clicksthree = saved.clicksthree;
+      multthree = saved.multthree;
+      APRthree = saved.APRthree;
+      aprthreegain = saved.aprthreegain;
+      costfour = saved.costfour;
+      clicksfour = saved.clicksfour;
+      multfour = saved.multfour;
+      APRfour = saved.APRfour;
+      aprfourgain = saved.aprfourgain;
+      costfive = saved.costfive;
+      clicksfive = saved.clicksfive;
+      multfive = saved.multfive;
+      APRfive = saved.APRfive;
+      aprfivegain = saved.aprfivegain;
+      costsix = saved.costsix;
+      clickssix = saved.clickssix;
+      multsix = saved.multsix;
+      APRsix = saved.APRsix;
+      aprsixgain = saved.aprsixgain;
+      costseven = saved.costseven;
+      clicksseven = saved.clicksseven;
+      multseven = saved.multseven;
+      APRseven = saved.APRseven;
+      aprsevengain = saved.aprsevengain;
+      costeight = saved.costeight;
+      clickseight = saved.clickseight;
+      multeight = saved.multeight;
+      APReight = saved.APReight;
+      apreightgain = saved.apreightgain;
+      }   
+
+    updateUI();
+}
+window.onload = function() {
+    LOAD();
+    updateUI();
+};
+
 function APRONE() {
   if (AP >= costone) {
     APRone += 1;
