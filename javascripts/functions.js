@@ -204,8 +204,8 @@ function SAVE() {
     multeight,
     APReight,
     apreightgain,
-  }
-  localStorage.setItem("APRSave", JSON.stringify(savedata));
+  };
+  localStorage.setItem("APRSave", JSON.stringify(saved));
 }
 function LOAD() {
     const saved = JSON.parse(localStorage.getItem("APRSave"));
@@ -253,17 +253,11 @@ function LOAD() {
     clickseight = saved.clickseight;
     multeight = saved.multeight;
     APReight = saved.APReight;
-    apreightgain = saved.apreightgain;
     updateUI();
 }
 window.onload = function() {
     LOAD();
-    updateUI();
 };
-setInterval(() => {
-    SAVE();
-}, 50);
-    
 function APRONE() {
   if (AP >= costone) {
     APRone += 1;
