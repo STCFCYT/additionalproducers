@@ -203,7 +203,6 @@ function SAVE() {
     clickseight,
     multeight,
     APReight,
-    apreightgain,
   };
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
