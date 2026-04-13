@@ -9,6 +9,7 @@ document.getElementById("aprsixsection").style.display = "none";
 document.getElementById("aprsevensection").style.display = "none";
 document.getElementById("apreightsection").style.display = "none";
 setInterval(() => {
+    SAVE();
     updateAPGain();
     if (AP >= (1e60)) {
     document.getElementById("addition_subtabs-btn").style.display = "block";
