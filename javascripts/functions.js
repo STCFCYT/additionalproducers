@@ -1,4 +1,5 @@
 // Global variables and their gains - shared across all scripts
+saveinterval = 5;
 AP = 10;
 let apgain = 0;
 APRone = 0;
@@ -206,6 +207,9 @@ function SAVE() {
   };
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
+setInterval(() => {
+    SAVE()
+}, (saveinterval*1000))
 function LOAD() {
     const saved = JSON.parse(localStorage.getItem("APRSave"));
     if (!saved) return;
