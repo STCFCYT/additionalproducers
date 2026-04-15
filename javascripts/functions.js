@@ -257,6 +257,12 @@ function LOAD() {
 window.onload = function() {
     LOAD();
 };
+function ADDITIONTAB() {
+    document.getElementById("additiontabsection").style.display = "block";
+}
+function OPTIONSTAB() {
+    document.getElementById("additiontabsection").style.display = "none";
+}
 function APRONE() {
   if (AP >= costone) {
     APRone += 1;
