@@ -15,6 +15,15 @@ b{
   font-size: 16px;
   cursor: pointer;
 }
+.options-btn {
+  background: #eeeeee;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+}
 .addition_subtabs-btn {
   background: #000000;
   color: red;
