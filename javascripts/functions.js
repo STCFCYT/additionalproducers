@@ -1,4 +1,3 @@
-document.getElementById("additiontabsection").style.display = "block";
 document.getElementById("optionstabsection").style.display = "none";
 // Global variables and their gains - shared across all scripts
 saveinterval = 5;
