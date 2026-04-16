@@ -24,6 +24,24 @@ b{
   font-size: 16px;
   cursor: pointer;
 }
+.reset-btn {
+  background: #ff0000;
+  color: white);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #800000;
+  font-size: 16px;
+  cursor: pointer;
+}
+.saveoptions-btns {
+  background: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+}
 .addition_subtabs-btn {
   background: #000000;
   color: red;
