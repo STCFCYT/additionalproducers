@@ -270,7 +270,6 @@ function OPTIONSTAB() {
     document.getElementById("additiontabsection").style.display = "none";
     document.getElementById("optionstabsection").style.display = "block";
 }
-}
 function APRONE() {
   if (AP >= costone) {
     APRone += 1;
