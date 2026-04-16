@@ -261,7 +261,11 @@ function LOAD() {
 }
 window.onload = function() {
     LOAD();
-};
+}
+document.getElementById("fullReset").addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+});
 function ADDITIONTAB() {
     document.getElementById("additiontabsection").style.display = "block";
     document.getElementById("optionstabsection").style.display = "none";
