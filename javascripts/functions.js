@@ -259,6 +259,11 @@ function LOAD() {
     APReight = saved.APReight;
     updateUI();
 }
+function EXPORT() {
+    const saveData = JSON.stringify(saved);
+    const encoded = btoa(saveData);
+    return encoded;
+}
 window.onload = function() {
     LOAD();
 }
