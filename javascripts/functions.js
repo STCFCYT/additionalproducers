@@ -260,7 +260,6 @@ function LOAD() {
     updateUI();
 }
 function EXPORT() {
-    const saved = JSON.parse(localStorage.getItem('saved')) || {'APRSave'};
     const saveData = JSON.stringify(saved);
     const encoded = btoa(saveData);
     navigator.clipboard.writeText(encoded).catch(err => console.error('Failed to copy:', err));
