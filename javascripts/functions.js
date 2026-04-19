@@ -267,27 +267,38 @@ function EXPORT() {
     return encoded;
 }
 function IMPORT() {
-    let encoded = prompt("Paste your save string:");
-
-    if (!encoded) {
-        alert("No save data provided.");
+    const box = document.getElementById("importBox");
+    if (!box) {
+        console.error("Import box not found");
         return;
     }
 
-    let decoded, saved;
+    const raw = box.value.trim();
+    if (!raw) {
+        console.error("No save data provided");
+        return;
+    }
+
+    let decoded;
     try {
-        decoded = atob(encoded);
-        saved = JSON.parse(decoded);
+        decoded = atob(raw);
     } catch (e) {
-        alert("Invalid or corrupted save.");
-        console.error("Import error:", e);
+        console.error("Invalid base64 save");
+        return;
+    }
+
+    let data;
+    try {
+        data = JSON.parse(decoded);
+    } catch (e) {
+        console.error("Invalid JSON in save");
         return;
     }
 
     // Apply save data
-    LOAD(saved);
-    alert("Save imported successfully!");
+    loadSave(data);
 }
+
 window.onload = function() {
     LOAD();
 }
