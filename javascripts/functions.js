@@ -267,7 +267,7 @@ function EXPORT() {
     return encoded;
 }
 function IMPORT() {
-    const encoded = document.getElementById("importBox").value.trim();
+    let encoded = prompt("Paste your save string:");
 
     if (!encoded) {
         alert("No save data provided.");
