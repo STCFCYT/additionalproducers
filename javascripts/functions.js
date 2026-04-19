@@ -266,57 +266,27 @@ function EXPORT() {
     navigator.clipboard.writeText(encoded).catch(err => console.error('Failed to copy:', err));
     return encoded;
 }
-function IMPORT(encoded) {
-    try {
-        const decoded = atob(encoded);
-        const saved = JSON.parse(decoded);
-        AP = saved.AP;
-        apgain = saved.apgain;
-        costone = saved.costone;
-        clicksone = saved.clicksone;
-        multone = saved.multone;
-        APRone = saved.APRone;
-        apronegain = saved.apronegain;
-        costtwo = saved.costtwo;
-        clickstwo = saved.clickstwo;
-        multtwo = saved.multtwo;
-        APRtwo = saved.APRtwo;
-        aprtwogain = saved.aprtwogain;
-        tickspeed = saved.tickspeed;
-        tickspeedcost = saved.tickspeedcost;
-        costthree = saved.costthree;
-        clicksthree = saved.clicksthree;
-        multthree = saved.multthree;
-        APRthree = saved.APRthree;
-        aprthreegain = saved.aprthreegain;
-        costfour = saved.costfour;
-        clicksfour = saved.clicksfour;
-        multfour = saved.multfour;
-        APRfour = saved.APRfour;
-        aprfourgain = saved.aprfourgain;
-        costfive = saved.costfive;
-        clicksfive = saved.clicksfive;
-        multfive = saved.multfive;
-        APRfive = saved.APRfive;
-        aprfivegain = saved.aprfivegain;
-        costsix = saved.costsix;
-        clickssix = saved.clickssix;
-        multsix = saved.multsix;
-        APRsix = saved.APRsix;
-        aprsixgain = saved.aprsixgain;
-        costseven = saved.costseven;
-        clicksseven = saved.clicksseven;
-        multseven = saved.multseven;
-        APRseven = saved.APRseven;
-        aprsevengain = saved.aprsevengain;
-        costeight = saved.costeight;
-        clickseight = saved.clickseight;
-        multeight = saved.multeight;
-        APReight = saved.APReight;
-        updateUI();
-    } catch (error) {
-        console.error('Failed to import save:', error);
+function IMPORT() {
+    const encoded = document.getElementById("importBox").value.trim();
+
+    if (!encoded) {
+        alert("No save data provided.");
+        return;
     }
+
+    let decoded, saved;
+    try {
+        decoded = atob(encoded);
+        saved = JSON.parse(decoded);
+    } catch (e) {
+        alert("Invalid or corrupted save.");
+        console.error("Import error:", e);
+        return;
+    }
+
+    // Apply save data
+    LOAD(saved);
+    alert("Save imported successfully!");
 }
 window.onload = function() {
     LOAD();
