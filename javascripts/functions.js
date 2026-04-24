@@ -272,6 +272,7 @@ function IMPORT() {
         console.error("Import box not found");
         return;
     }
+}
 
     const raw = box.value.trim();
     if (!raw) {
