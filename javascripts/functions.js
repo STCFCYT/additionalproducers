@@ -269,7 +269,7 @@ function EXPORT() {
 function IMPORT() {
     const box = document.getElementById("importBox");
     if (!box) {
-        console.error("Import box not found");
+        alert("Import box is empty");
         return;
     }
     const raw = box.value.trim();
