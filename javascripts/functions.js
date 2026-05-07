@@ -260,44 +260,51 @@ function LOAD() {
     updateUI();
 }
 function EXPORT() {
-    const saved = SAVE();
-    const saveData = JSON.stringify(saved);
-    const encoded = btoa(saveData);
-    navigator.clipboard.writeText(encoded).catch(err => console.error('Failed to copy:', err));
-    return encoded;
+    try {
+        const saveObj = SAVE(); // your existing SAVE() returns a plain object
+        const json = JSON.stringify(saveObj);
+
+        // UTF‑8 encode → Base64
+        const utf8 = new TextEncoder().encode(json);
+        let binary = "";
+        utf8.forEach(b => binary += String.fromCharCode(b));
+        const encoded = btoa(binary);
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(encoded);
+
+        return encoded;
+    } catch (e) {
+        alert("Export failed: " + e);
+        return "";
+    }
 }
+
 function IMPORT() {
-    const box = document.getElementById("importBox");
-    if (!box) {
-        alert("Import box is empty");
-        return;
-    }
-    const raw = box.value.trim();
-    if (!raw) {
-        console.error("No save data provided");
-        return;
-    }
-
-    let decoded;
     try {
-        decoded = atob(raw);
-    } catch (e) {
-        console.error("Invalid base64 save");
-        return;
-    }
+        const raw = document.getElementById("importBox").value.trim();
+        if (!raw) {
+            alert("Import box is empty!");
+            return;
+        }
 
-    let data;
-    try {
-        data = JSON.parse(decoded);
-    } catch (e) {
-        console.error("Invalid JSON in save");
-        return;
-    }
+        // Base64 → UTF‑8 decode
+        const binary = atob(raw);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        const json = new TextDecoder().decode(bytes);
 
-    // Apply save data
-    loadSave(data);
+        const data = JSON.parse(json);
+        LOAD(data);
+
+        alert("Import successful!");
+    } catch (e) {
+        alert("Invalid or corrupted save code!");
+        console.error(e);
+    }
 }
-
 window.onload = function() {
     LOAD();
 }
