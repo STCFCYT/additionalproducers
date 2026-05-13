@@ -211,8 +211,8 @@ function SAVE() {
 setInterval(() => {
     SAVE()
 }, (saveinterval*1000))
-function LOAD() {
-    const saved = JSON.parse(localStorage.getItem("APRSave"));
+function LOAD(data) {
+    const saved = data || JSON.parse(localStorage.getItem("APRSave"));
     if (!saved) return;
     AP = saved.AP;
     apgain = saved.apgain;
@@ -261,17 +261,63 @@ function LOAD() {
 }
 function EXPORT() {
     try {
-        const saveObj = SAVE(); // your existing SAVE() returns a plain object
-        const json = JSON.stringify(saveObj);
+        const saved = { 
+            AP,
+            apgain,
+            costone,
+            clicksone,
+            multone,
+            APRone,
+            apronegain,
+            costtwo,
+            clickstwo,
+            multtwo,
+            APRtwo,
+            aprtwogain,
+            tickspeed,
+            tickspeedcost,
+            costthree,
+            clicksthree,
+            multthree,
+            APRthree,
+            aprthreegain,
+            costfour,
+            clicksfour,
+            multfour,
+            APRfour,
+            aprfourgain,
+            costfive,
+            clicksfive,
+            multfive,
+            APRfive,
+            aprfivegain,
+            costsix,
+            clickssix,
+            multsix,
+            APRsix,
+            aprsixgain,
+            costseven,
+            clicksseven,
+            multseven,
+            APRseven,
+            aprsevengain,
+            costeight,
+            clickseight,
+            multeight,
+            APReight,
+        };
+        const json = JSON.stringify(saved);
 
-        // UTF‑8 encode → Base64
+        // UTF-8 encode → Base64
         const utf8 = new TextEncoder().encode(json);
-        let binary = "";
-        utf8.forEach(b => binary += String.fromCharCode(b));
-        const encoded = btoa(binary);
+        const encoded = btoa(String.fromCharCode.apply(null, utf8));
 
-        // Copy to clipboard
-        navigator.clipboard.writeText(encoded);
+        // Copy to clipboard and show feedback
+        navigator.clipboard.writeText(encoded).then(() => {
+            alert("Save code copied to clipboard!");
+        }).catch(() => {
+            alert("Failed to copy to clipboard. Save code: " + encoded);
+        });
 
         return encoded;
     } catch (e) {
@@ -288,7 +334,7 @@ function IMPORT() {
             return;
         }
 
-        // Base64 → UTF‑8 decode
+        // Base64 → UTF-8 decode
         const binary = atob(raw);
         const bytes = new Uint8Array(binary.length);
         for (let i = 0; i < binary.length; i++) {
