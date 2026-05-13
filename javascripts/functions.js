@@ -164,51 +164,15 @@ function SAVE() {
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
 setInterval(() => {
-    const saved = { 
-            AP,
-            apgain,
-            costone,
-            clicksone,
-            multone,
-            APRone,
-            apronegain,
-            costtwo,
-            clickstwo,
-            multtwo,
-            APRtwo,
-            aprtwogain,
-            tickspeed,
-            tickspeedcost,
-            costthree,
-            clicksthree,
-            multthree,
-            APRthree,
-            aprthreegain,
-            costfour,
-            clicksfour,
-            multfour,
-            APRfour,
-            aprfourgain,
-            costfive,
-            clicksfive,
-            multfive,
-            APRfive,
-            aprfivegain,
-            costsix,
-            clickssix,
-            multsix,
-            APRsix,
-            aprsixgain,
-            costseven,
-            clicksseven,
-            multseven,
-            APRseven,
-            aprsevengain,
-            costeight,
-            clickseight,
-            multeight,
-            APReight,
-    };
+    let saved = { 
+        AP: AP,
+        Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight]
+        Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain]
+        Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight]
+        Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight]
+        Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight]
+        TickspeedConfig:[tickspeed, tickspeedcost]
+    }
     SAVE()
 }, (saveinterval*1000))
 function LOAD(data) {
