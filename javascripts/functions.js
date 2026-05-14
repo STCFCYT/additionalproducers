@@ -1,4 +1,14 @@
 document.getElementById("optionstabsection").style.display = "none";
+// Savety first! (Haha funny lol)
+let saved = { 
+        AP: AP,
+        Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight],
+        Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain],
+        Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight],
+        Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight],
+        Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight],
+        TickspeedConfig:[tickspeed, tickspeedcost],
+}
 // Global variables and their gains - shared across all scripts
 saveinterval = 5;
 AP = 10;
@@ -164,15 +174,6 @@ function SAVE() {
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
 setInterval(() => {
-    let saved = { 
-        AP: AP,
-        Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight],
-        Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain],
-        Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight],
-        Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight],
-        Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight],
-        TickspeedConfig:[tickspeed, tickspeedcost],
-    }
     SAVE()
 }, (saveinterval*1000))
 function LOAD(data) {
