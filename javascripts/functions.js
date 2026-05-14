@@ -1,14 +1,4 @@
 document.getElementById("optionstabsection").style.display = "none";
-// Savety first! (Haha funny lol)
-let saved = { 
-        AP: AP,
-        Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight],
-        Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain],
-        Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight],
-        Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight],
-        Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight],
-        TickspeedConfig:[tickspeed, tickspeedcost],
-}
 // Global variables and their gains - shared across all scripts
 saveinterval = 5;
 AP = 10;
@@ -62,6 +52,16 @@ AUtwo = 0;
 AUthree = 0;
 multiplications = 0;
 MP = 0;
+// "saved" is defined after global variables
+let saved = { 
+        AP: AP,
+        Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight],
+        Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain],
+        Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight],
+        Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight],
+        Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight],
+        TickspeedConfig:[tickspeed, tickspeedcost],
+}
 // AP and APR Gain must be assigned into different variables
 function updateAPGain() {
     apgain = APRone * multone;
