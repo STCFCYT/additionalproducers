@@ -56,47 +56,6 @@ MP = 0;
 let saved = { 
         AP: AP,
         apgain: apgain,
-        costone: costone,
-        clicksone: clicksone,
-        multone: multone,
-        APRone: APRone,
-        apronegain: apronegain,
-        costtwo: costtwo,
-        clickstwo: clickstwo,
-        multtwo: multtwo,
-        APRtwo: APRtwo,
-        aprtwogain: aprtwogain,
-        tickspeed: tickspeed,
-        tickspeedcost: tickspeedcost,
-        costthree: costthree,
-        clicksthree: clicksthree,
-        multthree: multthree,
-        APRthree: APRthree,
-        aprthreegain: aprthreegain,
-        costfour: costfour,
-        clicksfour: clicksfour,
-        multfour: multfour,
-        APRfour: APRfour,
-        aprfourgain: aprfourgain,
-        costfive: costfive,
-        clicksfive: clicksfive,
-        multfive: multfive,
-        APRfive: APRfive,
-        aprfivegain: aprfivegain,
-        costsix: costsix,
-        clickssix: clickssix,
-        multsix: multsix,
-        APRsix: APRsix,
-        aprsixgain: aprsixgain,
-        costseven: costseven,
-        clicksseven: clicksseven,
-        multseven: multseven,
-        APRseven: APRseven,
-        aprsevengain: aprsevengain,
-        costeight: costeight,
-        clickseight: clickseight,
-        multeight: multeight,
-        APReight: APReight,
         Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight],
         Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain],
         Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight],
@@ -213,61 +172,97 @@ function updateUI() {
   }
 }
 function SAVE() {
+  saved.AP = AP;
+  saved.apgain = apgain;
+  saved.Producers = [APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight];
+  saved.Gains = [apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain];
+  saved.Costs = [costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight];
+  saved.Clicks = [clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight];
+  saved.Multipliers = [multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight];
+  saved.TickspeedConfig = [tickspeed, tickspeedcost];
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
 setInterval(() => {
     SAVE()
 }, (saveinterval*1000))
 function LOAD(data) {
-    const saved = data || JSON.parse(localStorage.getItem("APRSave"));
-    if (!saved) return;
-    AP = saved.AP;
-    apgain = saved.apgain;
-    costone = saved.costone;
-    clicksone = saved.clicksone;
-    multone = saved.multone;
-    APRone = saved.APRone;
-    apronegain = saved.apronegain;
-    costtwo = saved.costtwo;
-    clickstwo = saved.clickstwo;
-    multtwo = saved.multtwo;
-    APRtwo = saved.APRtwo;
-    aprtwogain = saved.aprtwogain;
-    tickspeed = saved.tickspeed;
-    tickspeedcost = saved.tickspeedcost;
-    costthree = saved.costthree;
-    clicksthree = saved.clicksthree;
-    multthree = saved.multthree;
-    APRthree = saved.APRthree;
-    aprthreegain = saved.aprthreegain;
-    costfour = saved.costfour;
-    clicksfour = saved.clicksfour;
-    multfour = saved.multfour;
-    APRfour = saved.APRfour;
-    aprfourgain = saved.aprfourgain;
-    costfive = saved.costfive;
-    clicksfive = saved.clicksfive;
-    multfive = saved.multfive;
-    APRfive = saved.APRfive;
-    aprfivegain = saved.aprfivegain;
-    costsix = saved.costsix;
-    clickssix = saved.clickssix;
-    multsix = saved.multsix;
-    APRsix = saved.APRsix;
-    aprsixgain = saved.aprsixgain;
-    costseven = saved.costseven;
-    clicksseven = saved.clicksseven;
-    multseven = saved.multseven;
-    APRseven = saved.APRseven;
-    aprsevengain = saved.aprsevengain;
-    costeight = saved.costeight;
-    clickseight = saved.clickseight;
-    multeight = saved.multeight;
-    APReight = saved.APReight;
+    const savedData = data || JSON.parse(localStorage.getItem("APRSave"));
+    if (!savedData) return;
+    
+    AP = savedData.AP || AP;
+    apgain = savedData.apgain || 0;
+    
+    // Load Producers
+    if (savedData.Producers && Array.isArray(savedData.Producers)) {
+        APRone = savedData.Producers[0] || 0;
+        APRtwo = savedData.Producers[1] || 0;
+        APRthree = savedData.Producers[2] || 0;
+        APRfour = savedData.Producers[3] || 0;
+        APRfive = savedData.Producers[4] || 0;
+        APRsix = savedData.Producers[5] || 0;
+        APRseven = savedData.Producers[6] || 0;
+        APReight = savedData.Producers[7] || 0;
+    }
+    
+    // Load Gains
+    if (savedData.Gains && Array.isArray(savedData.Gains)) {
+        apgain = savedData.Gains[0] || 0;
+        apronegain = savedData.Gains[1] || 0;
+        aprtwogain = savedData.Gains[2] || 0;
+        aprthreegain = savedData.Gains[3] || 0;
+        aprfourgain = savedData.Gains[4] || 0;
+        aprfivegain = savedData.Gains[5] || 0;
+        aprsixgain = savedData.Gains[6] || 0;
+        aprsevengain = savedData.Gains[7] || 0;
+    }
+    
+    // Load Costs
+    if (savedData.Costs && Array.isArray(savedData.Costs)) {
+        costone = savedData.Costs[0] || 10;
+        costtwo = savedData.Costs[1] || 100;
+        costthree = savedData.Costs[2] || 10000;
+        costfour = savedData.Costs[3] || 1e6;
+        costfive = savedData.Costs[4] || 1e9;
+        costsix = savedData.Costs[5] || 1e12;
+        costseven = savedData.Costs[6] || 1e15;
+        costeight = savedData.Costs[7] || 1e18;
+    }
+    
+    // Load Clicks
+    if (savedData.Clicks && Array.isArray(savedData.Clicks)) {
+        clicksone = savedData.Clicks[0] || 0;
+        clickstwo = savedData.Clicks[1] || 0;
+        clicksthree = savedData.Clicks[2] || 0;
+        clicksfour = savedData.Clicks[3] || 0;
+        clicksfive = savedData.Clicks[4] || 0;
+        clickssix = savedData.Clicks[5] || 0;
+        clicksseven = savedData.Clicks[6] || 0;
+        clickseight = savedData.Clicks[7] || 0;
+    }
+    
+    // Load Multipliers
+    if (savedData.Multipliers && Array.isArray(savedData.Multipliers)) {
+        multone = savedData.Multipliers[0] || 1;
+        multtwo = savedData.Multipliers[1] || 1;
+        multthree = savedData.Multipliers[2] || 1;
+        multfour = savedData.Multipliers[3] || 1;
+        multfive = savedData.Multipliers[4] || 1;
+        multsix = savedData.Multipliers[5] || 1;
+        multseven = savedData.Multipliers[6] || 1;
+        multeight = savedData.Multipliers[7] || 1;
+    }
+    
+    // Load TickspeedConfig
+    if (savedData.TickspeedConfig && Array.isArray(savedData.TickspeedConfig)) {
+        tickspeed = savedData.TickspeedConfig[0] || 1;
+        tickspeedcost = savedData.TickspeedConfig[1] || 1000;
+    }
+    
     updateUI();
 }
 function EXPORT() {
     try {
+        SAVE();
         const json = JSON.stringify(saved);
         // UTF-8 encode → Base64
         const utf8 = new TextEncoder().encode(json);
