@@ -79,6 +79,7 @@
     <tr>
       <td><button class = "saveoptions-btns" onclick = "SAVE()">Save</button></td>
       <td><button id = "fullReset" class = "reset-btn">RESET THE GAME!</button></td>
+      <td><label>Save Interval: <span id="saveIntervalDisplay">5</span>s</label><br><input type="range" id="saveIntervalSlider" min="1" max="30" value="5" onchange="changeSaveInterval(this.value)"></td>
     </tr>
     <tr>
       <td><button class = "saveoptions-btns" onclick = "EXPORT()">Export</button></td>
