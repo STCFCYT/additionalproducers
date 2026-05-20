@@ -55,7 +55,6 @@ MP = 0;
 // "saved" is defined after global variables
 let saved = { 
         AP: AP,
-        apgain: apgain,
         Producers:[APRone, APRtwo, APRthree, APRfour, APRfive, APRsix, APRseven, APReight],
         Gains:[apgain, apronegain, aprtwogain, aprthreegain, aprfourgain, aprfivegain, aprsixgain, aprsevengain],
         Costs:[costone, costtwo, costthree, costfour, costfive, costsix, costseven, costeight],
@@ -190,7 +189,6 @@ function LOAD(data) {
     if (!savedData) return;
     
     AP = savedData.AP || AP;
-    apgain = savedData.apgain || 0;
     
     // Load Producers
     if (savedData.Producers && Array.isArray(savedData.Producers)) {
