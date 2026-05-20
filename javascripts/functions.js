@@ -1,6 +1,7 @@
 document.getElementById("optionstabsection").style.display = "none";
 // Global variables and their gains - shared across all scripts
 saveinterval = 5;
+let saveIntervalId = null;
 AP = 10;
 let apgain = 0;
 APRone = 0;
@@ -181,9 +182,22 @@ function SAVE() {
   saved.TickspeedConfig = [tickspeed, tickspeedcost];
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
-setInterval(() => {
-    SAVE()
-}, (saveinterval*1000))
+
+function startSaveInterval() {
+    if (saveIntervalId !== null) {
+        clearInterval(saveIntervalId);
+    }
+    saveIntervalId = setInterval(() => {
+        SAVE()
+    }, (saveinterval * 1000))
+}
+
+function changeSaveInterval(value) {
+    saveinterval = parseInt(value);
+    document.getElementById("saveIntervalDisplay").textContent = saveinterval;
+    startSaveInterval();
+}
+
 function LOAD(data) {
     const savedData = data || JSON.parse(localStorage.getItem("APRSave"));
     if (!savedData) return;
@@ -306,6 +320,7 @@ function IMPORT() {
 }
 window.onload = function() {
     LOAD();
+    startSaveInterval();
 }
 document.getElementById("fullReset").addEventListener("click", () => {
     localStorage.clear();
