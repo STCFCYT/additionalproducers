@@ -98,6 +98,7 @@ b{
   color: #ffffff;
   border-color: #00ff00;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .apr1-btn.affordable:hover,
@@ -111,4 +112,5 @@ b{
 .apr8-btn.affordable:hover {
   background: #ffffff;
   color: #ffffff;
+  font-size: 16px;
 }
