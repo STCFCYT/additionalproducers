@@ -76,7 +76,7 @@ b{
 .apr7-btn,
 .apr8-btn {
   background: #c0c0c0;
-  color: #c0c0c0;
+  color: #000000;
   padding: 10px 20px;
   border-radius: 8px;
   border-color: #ff0000;
@@ -95,7 +95,7 @@ b{
 .apr7-btn.affordable,
 .apr8-btn.affordable {
   background: #ffffff;
-  color: #ffffff;
+  color: #000000;
   border-color: #00ff00;
   cursor: pointer;
   font-size: 16px;
@@ -111,6 +111,6 @@ b{
 .apr7-btn.affordable:hover,
 .apr8-btn.affordable:hover {
   background: #ffffff;
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
 }
