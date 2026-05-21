@@ -88,6 +88,34 @@ function updateAPRSIXgain() {
 function updateAPRSEVENgain() {
     aprsevengain = APReight * multeight;
 }
+
+// Function to update button affordability classes
+function updateButtonStates() {
+    const buttons = [
+        { element: document.getElementById("costone"), cost: costone },
+        { element: document.getElementById("costtwo"), cost: costtwo },
+        { element: document.getElementById("tickspeedcost"), cost: tickspeedcost },
+        { element: document.getElementById("costthree"), cost: costthree },
+        { element: document.getElementById("costfour"), cost: costfour },
+        { element: document.getElementById("costfive"), cost: costfive },
+        { element: document.getElementById("costsix"), cost: costsix },
+        { element: document.getElementById("costseven"), cost: costseven },
+        { element: document.getElementById("costeight"), cost: costeight }
+    ];
+    
+    buttons.forEach(btn => {
+        if (btn.element) {
+            if (AP >= btn.cost) {
+                btn.element.classList.remove("unaffordable");
+                btn.element.classList.add("affordable");
+            } else {
+                btn.element.classList.remove("affordable");
+                btn.element.classList.add("unaffordable");
+            }
+        }
+    });
+}
+
 // Function to update all UI displays
 function updateUI() {
   if (AP < 1000000) {
@@ -170,6 +198,9 @@ function updateUI() {
   } else {
       document.getElementById("tickspeedcost").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(tickspeedcost)*100)/100 + " AP";
   }
+  
+  // Update button states
+  updateButtonStates();
 }
 function SAVE() {
   saved.AP = AP;
