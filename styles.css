@@ -26,7 +26,7 @@ b{
 }
 .reset-btn {
   background: #ff0000;
-  color: white);
+  color: white;
   padding: 10px 20px;
   border-radius: 8px;
   border-color: #800000;
@@ -64,127 +64,51 @@ b{
   background: #ffffff;
   color: black;
 }
-.apr1-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-.apr1-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.apr2-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
 
-.apr2-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.tickspeed-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-.tickspeed-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.apr3-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.apr3-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.apr4-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.apr4-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.apr5-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.apr5-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.apr6-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.apr6-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-.apr7-btn {
-  background: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border-color: #00ff00;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.apr7-btn:hover {
-  background: #ffffff;
-  color: black;
-}
+/* Producer button styles - Default (Unaffordable) */
+.apr1-btn,
+.apr2-btn,
+.tickspeed-btn,
+.apr3-btn,
+.apr4-btn,
+.apr5-btn,
+.apr6-btn,
+.apr7-btn,
 .apr8-btn {
-  background: #ffffff;
-  color: black;
+  background: #c0c0c0;
+  color: #c0c0c0;
   padding: 10px 20px;
   border-radius: 8px;
-  border-color: #00ff00;
+  border-color: #ff0000;
   font-size: 16px;
+  cursor: not-allowed;
+}
+
+/* Producer button styles - Affordable */
+.apr1-btn.affordable,
+.apr2-btn.affordable,
+.tickspeed-btn.affordable,
+.apr3-btn.affordable,
+.apr4-btn.affordable,
+.apr5-btn.affordable,
+.apr6-btn.affordable,
+.apr7-btn.affordable,
+.apr8-btn.affordable {
+  background: #ffffff;
+  color: #ffffff;
+  border-color: #00ff00;
   cursor: pointer;
 }
 
-.apr8-btn:hover {
+.apr1-btn.affordable:hover,
+.apr2-btn.affordable:hover,
+.tickspeed-btn.affordable:hover,
+.apr3-btn.affordable:hover,
+.apr4-btn.affordable:hover,
+.apr5-btn.affordable:hover,
+.apr6-btn.affordable:hover,
+.apr7-btn.affordable:hover,
+.apr8-btn.affordable:hover {
   background: #ffffff;
-  color: black;
+  color: #ffffff;
 }
