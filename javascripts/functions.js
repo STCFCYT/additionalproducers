@@ -211,6 +211,8 @@ function SAVE() {
   saved.Clicks = [clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight];
   saved.Multipliers = [multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight];
   saved.TickspeedConfig = [tickspeed, tickspeedcost];
+  // Save the current timestamp for offline progress tracking
+  saved.lastSaveTime = Date.now();
   localStorage.setItem("APRSave", JSON.stringify(saved));
 }
 
@@ -227,6 +229,93 @@ function changeSaveInterval(value) {
     saveinterval = parseInt(value);
     document.getElementById("saveIntervalDisplay").textContent = saveinterval;
     startSaveInterval();
+}
+
+// Calculate offline progress based on elapsed time
+function calculateOfflineProgress(elapsedMs) {
+    const seconds = Math.floor(elapsedMs / 1000);
+    // Cap offline time at 24 hours to prevent abuse
+    const cappedSeconds = Math.min(seconds, 24 * 60 * 60);
+    
+    // Calculate AP gain from all producers
+    let totalAPGain = apgain;
+    
+    // Apply tickspeed multiplier
+    const offlineAPGain = totalAPGain * cappedSeconds * tickspeed;
+    
+    return {
+        offlineAPGain: offlineAPGain,
+        elapsedSeconds: cappedSeconds,
+        capped: seconds > (24 * 60 * 60)
+    };
+}
+
+// Show offline progress popup
+function showOfflineProgressPopup(progress) {
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.id = "offline-popup-overlay";
+    overlay.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9998; display: flex; align-items: center; justify-content: center;";
+    
+    // Create popup container
+    const popup = document.createElement("div");
+    popup.id = "offline-popup";
+    popup.style.cssText = "background: #85868a; border: 3px solid #ff0000; border-radius: 12px; padding: 30px; text-align: center; z-index: 9999; max-width: 500px; color: white; font-family: 'IBM Plex Mono', monospace;";
+    
+    // Format the AP gain
+    let apGainText;
+    if (progress.offlineAPGain < 1000000) {
+        apGainText = Math.floor(progress.offlineAPGain) + " AP";
+    } else {
+        apGainText = "e" + Math.floor(Math.log10(progress.offlineAPGain) * 100) / 100 + " AP";
+    }
+    
+    // Format elapsed time
+    const hours = Math.floor(progress.elapsedSeconds / 3600);
+    const minutes = Math.floor((progress.elapsedSeconds % 3600) / 60);
+    const secs = progress.elapsedSeconds % 60;
+    let timeText = "";
+    if (hours > 0) timeText += hours + "h ";
+    if (minutes > 0) timeText += minutes + "m ";
+    timeText += secs + "s";
+    
+    const cappedMessage = progress.capped ? "<p style='color: #ffff00; font-size: 12px;'>(Capped at 24 hours)</p>" : "";
+    
+    popup.innerHTML = `
+        <h2 style="color: #00ff00; margin-top: 0;">Welcome Back!</h2>
+        <p style="font-size: 18px; margin: 15px 0;">While you were away for:</p>
+        <p style="font-size: 20px; color: #00ff00; font-weight: bold; margin: 10px 0;">${timeText}</p>
+        <p style="font-size: 16px; margin: 15px 0;">You earned:</p>
+        <p style="font-size: 24px; color: #ffff00; font-weight: bold; margin: 10px 0;">${apGainText}</p>
+        ${cappedMessage}
+        <button id="offline-popup-close" style="background: #ffffff; color: black; padding: 12px 30px; border-radius: 8px; border: 2px solid #00ff00; font-size: 16px; cursor: pointer; margin-top: 20px; font-family: 'IBM Plex Mono', monospace; font-weight: bold;">OK</button>
+    `;
+    
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
+    
+    // Close button handler
+    document.getElementById("offline-popup-close").addEventListener("click", () => {
+        overlay.remove();
+    });
+}
+
+// Check for offline progress on load
+function checkOfflineProgress() {
+    const savedData = JSON.parse(localStorage.getItem("APRSave"));
+    if (!savedData || !savedData.lastSaveTime) return;
+    
+    const now = Date.now();
+    const lastSaveTime = savedData.lastSaveTime;
+    const elapsedMs = now - lastSaveTime;
+    
+    // Only show popup if offline for at least 10 seconds
+    if (elapsedMs > 10000) {
+        const progress = calculateOfflineProgress(elapsedMs);
+        AP += progress.offlineAPGain;
+        showOfflineProgressPopup(progress);
+        updateUI();
+    }
 }
 
 function LOAD(data) {
@@ -351,6 +440,7 @@ function IMPORT() {
 }
 window.onload = function() {
     LOAD();
+    checkOfflineProgress();
     startSaveInterval();
 }
 document.getElementById("fullReset").addEventListener("click", () => {
