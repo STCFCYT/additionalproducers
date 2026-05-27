@@ -662,9 +662,6 @@ function BOOST() {
     tickspeed = 1;
     tickspeedcost = 1000;
     
-    // Reset tickspeedboostmult
-    tickspeedboostmult = 1;
-    
     // Update UI
     updateUI();
     SAVE();
