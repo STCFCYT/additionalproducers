@@ -200,7 +200,11 @@ function updateUI() {
       document.getElementById("tickspeedcost").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(tickspeedcost)*100)/100 + " AP";
   }
   if (Math.log10(AP) > 25) {
-      document.getElementById("boostersection").style.display = "block";
+      if (Math.log10(AP) > boostmult) {
+          document.getElementById("boostersection").style.display = "block";
+      } else {
+          document.getElementById("boostersection").style.display = "none";
+      }
   } else {
       document.getElementById("boostersection").style.display = "none";
   }
