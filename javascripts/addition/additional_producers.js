@@ -13,43 +13,43 @@ setInterval(() => {
     if (AP >= (1e60)) {
     document.getElementById("addition_subtabs-btn").style.display = "block";
     }
-    AP += apgain * tickspeed * 0.05;
+    AP += apgain * tickspeed * boostmult * 0.05;
     if (APRone !== 0) {
         document.getElementById("aprtwosection").style.display = "block";
     }
     updateAPRONEgain();
-    APRone += apronegain * tickspeed * 0.05;
+    APRone += apronegain * tickspeed * boostmult * 0.05;
     if (APRtwo !== 0) {
         document.getElementById("aprthreesection").style.display = "block";
         document.getElementById("tickspeedsection").style.display = "block";
     }
     updateAPRTWOgain();
-    APRtwo += aprtwogain * tickspeed * 0.05;
+    APRtwo += aprtwogain * tickspeed * boostmult * 0.05;
     if (APRthree !== 0) {
         document.getElementById("aprfoursection").style.display = "block";
     }
     updateAPRTHREEgain();
-    APRthree += aprthreegain * tickspeed * 0.05;
+    APRthree += aprthreegain * tickspeed * boostmult * 0.05;
     if (APRfour !== 0) {
         document.getElementById("aprfivesection").style.display = "block";
         document.getElementById("maxallsection").style.display = "block";
     }
     updateAPRFOURgain();
-    APRfour += aprfourgain * tickspeed * 0.05;
+    APRfour += aprfourgain * tickspeed * boostmult * 0.05;
     if (APRfive !== 0) {
         document.getElementById("aprsixsection").style.display = "block";
     }
     updateAPRFIVEgain();
-    APRfive += aprfivegain * tickspeed * 0.05;
+    APRfive += aprfivegain * tickspeed * boostmult * 0.05;
     if (APRsix !== 0) {
         document.getElementById("aprsevensection").style.display = "block";
     }
     updateAPRSIXgain();
-    APRsix += aprsixgain * tickspeed * 0.05;
+    APRsix += aprsixgain * tickspeed * boostmult * 0.05;
     if (APRseven !== 0) {
         document.getElementById("apreightsection").style.display = "block";
     }
     updateAPRSEVENgain();
-    APRseven += aprsevengain * tickspeed * 0.05;
+    APRseven += aprsevengain * tickspeed * boostmult * 0.05;
     updateUI();
 }, 50);
