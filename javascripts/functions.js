@@ -221,6 +221,7 @@ function SAVE() {
   saved.Clicks = [clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight];
   saved.Multipliers = [multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight];
   saved.TickspeedConfig = [tickspeed, tickspeedcost];
+  saved.boostmult = boostmult;
   // Save the current timestamp for offline progress tracking
   saved.lastSaveTime = Date.now();
   localStorage.setItem("APRSave", JSON.stringify(saved));
@@ -399,6 +400,8 @@ function LOAD(data) {
         tickspeed = savedData.TickspeedConfig[0] || 1;
         tickspeedcost = savedData.TickspeedConfig[1] || 1000;
     }
+
+    boostmult = savedData.boostmult || boostmult;
     
     updateUI();
 }
