@@ -265,12 +265,12 @@ function showOfflineProgressPopup(progress) {
     // Create overlay
     const overlay = document.createElement("div");
     overlay.id = "offline-popup-overlay";
-    overlay.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9998; display: flex; align-items: center; justify-content: cente[...]
+    overlay.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9998; display: flex; align-items: center; justify-content: center;";
     
     // Create popup container
     const popup = document.createElement("div");
     popup.id = "offline-popup";
-    popup.style.cssText = "background: #85868a; border: 3px solid #ff0000; border-radius: 12px; padding: 30px; text-align: center; z-index: 9999; max-width: 500px; color: white; font-family: 'IBM[...]
+    popup.style.cssText = "background: #85868a; border: 3px solid #ff0000; border-radius: 12px; padding: 30px; text-align: center; z-index: 9999; max-width: 500px; color: white; font-family: 'IBM Plex Mono', monospace;";
     
     // Format the AP gain
     let apGainText;
@@ -298,7 +298,7 @@ function showOfflineProgressPopup(progress) {
         <p style="font-size: 16px; margin: 15px 0;">You earned:</p>
         <p style="font-size: 24px; color: #ffff00; font-weight: bold; margin: 10px 0;">${apGainText}</p>
         ${cappedMessage}
-        <button id="offline-popup-close" style="background: #ffffff; color: black; padding: 12px 30px; border-radius: 8px; border: 2px solid #00ff00; font-size: 16px; cursor: pointer; margin-top:[...]
+        <button id="offline-popup-close" style="background: #ffffff; color: black; padding: 12px 30px; border-radius: 8px; border: 2px solid #00ff00; font-size: 16px; cursor: pointer; margin-top: 20px;">Close</button>
     `;
     
     overlay.appendChild(popup);
