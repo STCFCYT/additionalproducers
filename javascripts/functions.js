@@ -620,7 +620,7 @@ function MAXALL() {
 
 function BOOST() {
     // Update boostmult to log10(AP)
-    boostmult = Math.log10(AP);
+    boostmult = (Math.log10(AP)/2);
     
     // Reset all game progress except boostmult
     AP = 10;
