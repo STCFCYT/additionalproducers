@@ -1,4 +1,3 @@
-document.getElementById("addition_subtabs-btn").style.display = "none";
 document.getElementById("aprtwosection").style.display = "none";
 document.getElementById("aprthreesection").style.display = "none";
 document.getElementById("tickspeedsection").style.display = "none";
