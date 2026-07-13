@@ -48,10 +48,6 @@ costeight = 1e18;
 multeight = 1;
 clickseight = 0;
 boostmult = 1;
-tickspeedboostmult = 1;
-AUone = 0;
-AUtwo = 0;
-AUthree = 0;
 multiplications = 0;
 MP = 0;
 // "saved" is defined after global variables
@@ -127,7 +123,7 @@ function updateUI() {
   if (apgain < 1000000){
     document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone) + " AP/s";
   } else {
-    document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone)*100)/100 + " AP/s";
+    document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone)*100)/100 * boostmult + " AP/s";
   }
   if (costone < 1000000){
       document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
