@@ -198,6 +198,7 @@ function updateUI() {
   if (Math.log10(AP) > 25) {
       if (Math.log10(AP) > boostmult) {
           document.getElementById("boostersection").style.display = "block";
+          document.getElementById("boosterbutton").textContent = "Boost for a x" + Math.floor(Math.log10(AP)*100)/100 + "multiplier to all APRs!";
       } else {
           document.getElementById("boostersection").style.display = "none";
       }
@@ -616,7 +617,7 @@ function MAXALL() {
 
 function BOOST() {
     // Update boostmult to log10(AP)
-    boostmult = (Math.log10(AP)/2);
+    boostmult = Math.log10(AP);
     
     // Reset all game progress except boostmult
     AP = 10;
