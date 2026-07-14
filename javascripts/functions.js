@@ -494,7 +494,7 @@ function APRTWO() {
 }
 function TICKSPEED() {
     if (AP >= tickspeedcost) {
-        tickspeed *= (tickspeedboostmult * 1.15);
+        tickspeed *= 1.15;
         AP -= tickspeedcost
         tickspeedcost *= 10;
     }
