@@ -123,7 +123,7 @@ function updateUI() {
   if (apgain < 1000000){
     document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone) + " AP/s";
   } else {
-    document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone * boostmult)*100)/100 + " AP/s";
+    document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone * boostmult * tickspeed)*100)/100 + " AP/s";
   }
   if (costone < 1000000){
       document.getElementById("costone").textContent = "Buy a First Additional Producer for " + costone + " AP";
