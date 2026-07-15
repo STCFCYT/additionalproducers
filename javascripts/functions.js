@@ -121,7 +121,7 @@ function updateUI() {
     document.getElementById("ap").textContent = "You have e" + Math.floor(Math.log10(AP)*100)/100 + " Addition Points.";
   }
   if (apgain < 1000000){
-    document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone) + " AP/s";
+    document.getElementById("ap_persec").textContent = "You are getting " + Math.floor(APRone * multone * tickspeed * boostmult) + " AP/s";
   } else {
     document.getElementById("ap_persec").textContent = "You are getting e" + Math.floor(Math.log10(APRone * multone * boostmult * tickspeed)*100)/100 + " AP/s";
   }
