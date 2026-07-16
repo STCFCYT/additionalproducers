@@ -59,6 +59,7 @@ let saved = {
         Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight],
         Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight],
         TickspeedConfig:[tickspeed, tickspeedcost],
+        boosmult: boostmult,
         MP: MP,
         multiplications: multiplications,
 }
