@@ -234,7 +234,7 @@ function showMultiplyButton() {
     const button = document.createElement("button");
     button.id = "multiply-button";
     button.textContent = "Multiply!";
-    button.style.cssText = "font-size: 60px; padding: 40px 100px; background: #ffff00; color: #000000; border: 5px solid #00ff00; border-radius: 20px; cursor: pointer; font-weight: bold;";
+    button.style.cssText = "font-size: 60px; padding: 40px 100px; background: #000000; color: orange; border: 5px solid #orange; border-radius: 20px; cursor: pointer; font-weight: bold;";
     
     button.addEventListener("click", () => {
         performMultiply();
