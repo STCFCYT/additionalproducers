@@ -195,7 +195,13 @@ function updateUI() {
   } else {
       document.getElementById("tickspeedcost").textContent = "Buy a Tickspeed Upgrade for e" + Math.floor(Math.log10(tickspeedcost)*100)/100 + " AP";
   }
-  if (Math.log10(AP) > 25) {
+  
+  if (Math.log10(AP) >= 100) {
+      // Show the multiply button overlay
+      if (!document.getElementById("multiply-overlay")) {
+          showMultiplyButton();
+      }
+  } else if (Math.log10(AP) > 25) {
       if (Math.log10(AP) > boostmult) {
           document.getElementById("boostersection").style.display = "block";
           document.getElementById("boosterbutton").textContent = "Boost for a x" + Math.floor(Math.log10(AP)*100)/100 + " multiplier to all APRs!";
@@ -209,6 +215,98 @@ function updateUI() {
   // Update button states
   updateButtonStates();
 }
+
+function showMultiplyButton() {
+    // Hide all game elements
+    document.getElementById("additiontabsection").style.display = "none";
+    document.getElementById("optionstabsection").style.display = "none";
+    document.getElementById("boostersection").style.display = "none";
+    
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.id = "multiply-overlay";
+    overlay.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;";
+    
+    // Create multiply button
+    const button = document.createElement("button");
+    button.id = "multiply-button";
+    button.textContent = "Multiply!";
+    button.style.cssText = "font-size: 60px; padding: 40px 100px; background: #ffff00; color: #000000; border: 5px solid #00ff00; border-radius: 20px; cursor: pointer; font-weight: bold;";
+    
+    button.addEventListener("click", () => {
+        performMultiply();
+        overlay.remove();
+    });
+    
+    overlay.appendChild(button);
+    document.body.appendChild(overlay);
+}
+
+function performMultiply() {
+    // Store the current boostmult value before resetting
+    boostmult = Math.log10(AP);
+    
+    // Reset all game progress except boostmult
+    AP = 10;
+    apgain = 0;
+    APRone = 0;
+    apronegain = 0;
+    APRtwo = 0;
+    aprtwogain = 0;
+    APRthree = 0;
+    aprthreegain = 0;
+    APRfour = 0;
+    aprfourgain = 0;
+    APRfive = 0;
+    aprfivegain = 0;
+    APRsix = 0;
+    aprsixgain = 0;
+    APRseven = 0;
+    aprsevengain = 0;
+    APReight = 0;
+    
+    // Reset costs
+    costone = 10;
+    costtwo = 100;
+    costthree = 10000;
+    costfour = 1e6;
+    costfive = 1e9;
+    costsix = 1e12;
+    costseven = 1e15;
+    costeight = 1e18;
+    
+    // Reset multipliers
+    multone = 1;
+    multtwo = 1;
+    multthree = 1;
+    multfour = 1;
+    multfive = 1;
+    multsix = 1;
+    multseven = 1;
+    multeight = 1;
+    
+    // Reset clicks
+    clicksone = 0;
+    clickstwo = 0;
+    clicksthree = 0;
+    clicksfour = 0;
+    clicksfive = 0;
+    clickssix = 0;
+    clicksseven = 0;
+    clickseight = 0;
+    
+    // Reset tickspeed
+    tickspeed = 1;
+    tickspeedcost = 1000;
+    
+    // Show the game UI again
+    document.getElementById("additiontabsection").style.display = "block";
+    // Don't show boost section after multiply
+    
+    updateUI();
+    SAVE();
+}
+
 function SAVE() {
   saved.AP = AP;
   saved.apgain = apgain;
