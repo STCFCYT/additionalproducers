@@ -59,6 +59,8 @@ let saved = {
         Clicks:[clicksone, clickstwo, clicksthree, clicksfour, clicksfive, clickssix, clicksseven, clickseight],
         Multipliers:[multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight],
         TickspeedConfig:[tickspeed, tickspeedcost],
+        MP: MP,
+        multiplications: multiplications,
 }
 // AP and APR Gain must be assigned into different variables
 function updateAPGain() {
@@ -243,10 +245,11 @@ function showMultiplyButton() {
 }
 
 function performMultiply() {
-    // Store the current boostmult value before resetting
-    boostmult = Math.log10(AP);
+    MP += 1;
+    multiplications += 1;
+    boostmult = 1;
     
-    // Reset all game progress except boostmult
+    // Reset all game progress
     AP = 10;
     apgain = 0;
     APRone = 0;
@@ -317,6 +320,8 @@ function SAVE() {
   saved.Multipliers = [multone, multtwo, multthree, multfour, multfive, multsix, multseven, multeight];
   saved.TickspeedConfig = [tickspeed, tickspeedcost];
   saved.boostmult = boostmult;
+  saved.MP = MP;
+  saved.multiplications = multiplications;
   // Save the current timestamp for offline progress tracking
   saved.lastSaveTime = Date.now();
   localStorage.setItem("APRSave", JSON.stringify(saved));
