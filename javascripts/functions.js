@@ -503,6 +503,9 @@ function LOAD(data) {
     }
 
     boostmult = savedData.boostmult || boostmult;
+    MP = savedData.MP || MP;
+    multiplications = saved.multiplications || multiplications;
+    
     
     updateUI();
 }
@@ -568,6 +571,10 @@ function ADDITIONTAB() {
 function OPTIONSTAB() {
     document.getElementById("additiontabsection").style.display = "none";
     document.getElementById("optionstabsection").style.display = "block";
+}
+function MULTIPLICATIONTAB() {
+    document.getElementById("additiontabsection").style.display = "none";
+    document.getElementById("optionstabsection").style.display = "none";
 }
 function APRONE() {
   if (AP >= costone) {
