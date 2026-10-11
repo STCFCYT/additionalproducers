@@ -571,6 +571,7 @@ function ADDITIONTAB() {
 function OPTIONSTAB() {
     document.getElementById("additiontabsection").style.display = "none";
     document.getElementById("optionstabsection").style.display = "block";
+    document.getElementById("boostersection").style.display = "none";
 }
 function MULTIPLICATIONTAB() {
     document.getElementById("additiontabsection").style.display = "none";
