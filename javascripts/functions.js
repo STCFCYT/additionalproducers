@@ -567,15 +567,20 @@ document.getElementById("fullReset").addEventListener("click", () => {
 function ADDITIONTAB() {
     document.getElementById("additiontabsection").style.display = "block";
     document.getElementById("optionstabsection").style.display = "none";
+    document.getElementById("boostersection").style.display = "block";
+    document.getElementById("boosterbutton").style.display = "block";
 }
 function OPTIONSTAB() {
     document.getElementById("additiontabsection").style.display = "none";
     document.getElementById("optionstabsection").style.display = "block";
     document.getElementById("boostersection").style.display = "none";
+    document.getElementById("boosterbutton").style.display = "none";
 }
 function MULTIPLICATIONTAB() {
     document.getElementById("additiontabsection").style.display = "none";
     document.getElementById("optionstabsection").style.display = "none";
+    document.getElementById("boostersection").style.display = "none";
+    document.getElementById("boosterbutton").style.display = "none";
 }
 function APRONE() {
   if (AP >= costone) {
